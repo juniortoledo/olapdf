@@ -15,7 +15,7 @@ class Main extends Controller
     $model = new CrudModel();
     $files = $model->getAll('pdf');
     // render view
-    self::render('index', ['files' => $files]);
+    self::render('index', ['files' => array_reverse($files)]);
   }
 
   // admin
