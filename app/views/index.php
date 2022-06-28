@@ -18,7 +18,7 @@
               <tr>
                 <th scope="row"><?= $item->name ?></th>
                 <td>
-                  <a target="_black" href="<?= URL . 'assets/pdf/' . $item->name ?>" class="btn btn-primary btn-sm">Download</a>
+                  <a target="_black" href="<?= URL . 'assets/pdf/' . $item->file_name ?>" class="btn btn-primary btn-sm">Download</a>
                 </td>
               </tr>
             <?php endforeach ?>
