@@ -29,13 +29,16 @@ class Controller
    */
   public function upload($data)
   {
-    $extension = strtolower(substr($data['name'], -5)); // file extension
-    $new_name = md5(time()) . $extension; // define the file name
-    $directory = ASSETS . "pdf/"; // defines the directory where we will send the file
+    $filename = $_FILES["file"]["name"];
+    $file_basename = substr($filename, 0, strripos($filename, '.')); // get file extention
+    $file_ext = substr($filename, strripos($filename, '.')); // get file name
+    $allowed_file_types = array('.doc', '.docx', '.rtf', '.pdf');
 
-    move_uploaded_file($data['tmp_name'], $directory . $new_name); // upload
-
-    return $new_name;
+    // Rename file
+    $newfilename = date('d-m-Y-h-i-s') . $file_ext;
+    move_uploaded_file($_FILES["file"]["tmp_name"], ASSETS . 'pdf/' . $newfilename);
+    
+    return $newfilename;
   }
 
   /**
