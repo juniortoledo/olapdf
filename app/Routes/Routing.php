@@ -16,6 +16,10 @@ class Routing
     // home
     $this->router->get('/', 'Main:index');
 
+    // home
+    $this->router->get('/admin/{senha}', 'Main:admin');
+    $this->router->post('/upload', 'Main:upload');
+
     // route erros
     $this->router->get('/error', 'Main:error');
 

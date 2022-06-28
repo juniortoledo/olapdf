@@ -10,14 +10,12 @@ class Migration extends Model
   public function execute()
   {
     // check if table exists
-    if (!self::db()->schema()->hasTable('users')) {
-      self::db()->schema()->create('users', function (CreateTable $table) {
+    if (!self::db()->schema()->hasTable('pdf')) {
+      self::db()->schema()->create('pdf', function (CreateTable $table) {
         $table->integer('id')->primary()->autoincrement();
         $table->string('name')->notNull();
-        $table->string('email')->notNull();
-        $table->string('passwd')->notNull();
-        $table->string('created_at');
-        $table->string('updated_at');
+        $table->string('file_name')->notNull();
+        $table->string('createdAt');
       });
     }
 

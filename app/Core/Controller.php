@@ -27,11 +27,11 @@ class Controller
   /**
    * image upload
    */
-  public function getImage($data)
+  public function upload($data)
   {
     $extension = strtolower(substr($data['name'], -5)); // file extension
     $new_name = md5(time()) . $extension; // define the file name
-    $directory = ASSETS . "images/"; // defines the directory where we will send the file
+    $directory = ASSETS . "pdf/"; // defines the directory where we will send the file
 
     move_uploaded_file($data['tmp_name'], $directory . $new_name); // upload
 
