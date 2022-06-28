@@ -42,16 +42,16 @@ class Main extends Controller
 
     // Rename file
     $newfilename = date('d-m-Y-h-i-s') . $file_ext;
-    move_uploaded_file($_FILES["file"]["tmp_name"], URL . 'assets/pdf/' . $newfilename);
+    move_uploaded_file($_FILES["file"]["tmp_name"], 'assets/pdf/' . $newfilename);
     
-    $model->insert(array(
-      'name' => $data['name'],
-      'file_name' => $newfilename,
-      'createdAt' => date('d/m/Y')
-    ), 'pdf');
+    // $model->insert(array(
+    //   'name' => $data['name'],
+    //   'file_name' => $newfilename,
+    //   'createdAt' => date('d/m/Y')
+    // ), 'pdf');
 
 
-    header('location:'. URL . 'admin/diario@2022');
+    // header('location:'. URL . 'admin/diario@2022');
   }
 
   /**
