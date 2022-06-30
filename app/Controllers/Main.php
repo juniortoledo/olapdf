@@ -47,14 +47,14 @@ class Main extends Controller
     $model->insert(array(
       'name' => $data['name'],
       'file_name' => $newfilename,
-      'createdAt' => date('d/m/Y')
+      'createdAt' => $data['date']
     ), 'pdf');
 
 
     header('location:'. URL . 'admin/diario@2022');
   }
 
-  /**
+  /** 
    * view error
    */
   public function error()
